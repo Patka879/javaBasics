@@ -44,13 +44,12 @@ public class Tasks {
         String star = "";
         for (int i = 1; i <= 50; i++) {
             star += "*";
-            if(i % 2 == 0) {
+            if (i % 2 == 0) {
                 System.out.println(star + "++");
             } else if (i % 7 == 0) {
                 System.out.println(star + 7);
             } else if (i % 4 == 3) {
                 System.out.println(star + "%3");
             }
-        }
-    }
+        }}
 }
