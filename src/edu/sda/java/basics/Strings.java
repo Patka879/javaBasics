@@ -1,5 +1,7 @@
 package edu.sda.java.basics;
 
+import java.util.Scanner;
+
 public class Strings {
     public static void main(String[] args) {
         String text1 = "aaa";
@@ -18,5 +20,11 @@ public class Strings {
 
         text3 = "BBB"; //this will not remove "AAA" string from String Pool -> it stays there, just that text3 returns new value
         System.out.println(text3);
+
+        System.out.print("========");
+        System.out.print("What is Your name?");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        System.out.print("Hello "  + name);
     }
 }
