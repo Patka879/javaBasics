@@ -1,4 +1,4 @@
-package edu.sda.java.basics;
+package edu.sda.java.basics.practice;
 
 public class OperatorsJava {
     public static void main(String[] args) {

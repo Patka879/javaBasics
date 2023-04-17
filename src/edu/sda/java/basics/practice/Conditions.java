@@ -1,4 +1,4 @@
-package edu.sda.java.basics;
+package edu.sda.java.basics.practice;
 
 public class Conditions {
     public static void main(String[] args) {
