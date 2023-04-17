@@ -13,6 +13,11 @@ public class Regex {
         System.out.println("Exact match: " + matcher.matches());
         System.out.println("Pattern found: " + matcher.find());
 
+        System.out.println("abcd");
+        String sampleString = "abcd";
+        //we use same pattern definition and apply it to another string
+        Matcher another = pattern.matcher(sampleString);
+        System.out.println(another.find());
 
         System.out.print("=============");
 
