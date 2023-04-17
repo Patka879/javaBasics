@@ -1,5 +1,5 @@
 package edu.sda.java.basics;
-`
+
 public class Strings {
     public static void main(String[] args) {
         String text1 = "aaa";
