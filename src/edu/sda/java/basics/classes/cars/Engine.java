@@ -1,12 +1,16 @@
 package edu.sda.java.basics.classes.cars;
 
+import java.time.LocalDate;
+
 public class Engine {
     private String fuelType;
     private int capacity;
+    private LocalDate dateOfProduction;
 
-    public Engine(String fuelType, int capacity) {
+    public Engine(String fuelType, int capacity, LocalDate dateOfProduction) {
         this.fuelType = fuelType;
         this.capacity = capacity;
+        this.dateOfProduction = dateOfProduction;
     }
 
     public String getFuelType() {
@@ -25,8 +29,11 @@ public class Engine {
         this.capacity = capacity;
     }
 
-    public String engineInfo() {
-        return "Fuel Type: " + fuelType + "\n" +
-                "Capacity: " + capacity;
+    public LocalDate getDateOfProduction() {
+        return dateOfProduction;
+    }
+
+    public void setDateOfProduction(LocalDate dateOfProduction) {
+        this.dateOfProduction = dateOfProduction;
     }
 }

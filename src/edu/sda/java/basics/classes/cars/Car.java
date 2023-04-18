@@ -1,17 +1,23 @@
 package edu.sda.java.basics.classes.cars;
 import edu.sda.java.basics.classes.cars.tires.Tire;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Car {
     private String name;
     private String model;
     private Engine engine;
     private Tire[] tires;
 
-    public Car(String name, String model, Engine engine, Tire[] tires) {
+    private LocalDate dateOfProduction;
+
+    public Car(String name, String model, Engine engine, Tire[] tires, LocalDate dateOfProduction) {
         this.name = name;
         this.model = model;
         this.engine = engine;
         this.tires = tires;
+        this.dateOfProduction = dateOfProduction;
     }
 
     public String getName() {
@@ -46,12 +52,22 @@ public class Car {
         this.tires = tires;
     }
 
+    public LocalDate getDateOfProduction() {
+        return dateOfProduction;
+    }
+
+    public void setDateOfProduction(LocalDate dateOfProduction) {
+        this.dateOfProduction = dateOfProduction;
+    }
+
     public String carInfo() {
         return "Car Name: " + name + "\n" +
                 "Car Model: " + model + "\n" +
                 "Engine Fuel Type: " + engine.getFuelType() + "\n" +
                 "Engine Capacity: " + engine.getCapacity() + "\n" +
-                "Tires: " + tires.length;
+                "Engine Year Of Production: " + engine.getDateOfProduction().format(DateTimeFormatter.ofPattern("yyyy")) + "\n" +
+                "Tires: " + tires.length + "\n" +
+                "Car Day Of Production: " + getDateOfProduction().format(DateTimeFormatter.ofPattern("MMM yyyy"));
     }
 }
 
