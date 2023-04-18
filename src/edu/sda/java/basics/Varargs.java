@@ -11,6 +11,8 @@ public class Varargs {
         varArgsOne();
         System.out.println("===========");
         varArgsTwo("Patrycja", 30, 3,5,6,7);
+        System.out.println("===========");
+        varArgsThree( 7, 3,5,6,7);
 
     }
 
@@ -31,6 +33,25 @@ public class Varargs {
     }
 
     /**
-     *
+     * Write a program that accepts int and a random number of ints - var
+     * check if in this var there's a number passed in first argument
+     * if there's match, print "Found", otherwise print "Unfortunately, no match"
      */
+
+    private static void varArgsThree(int number, int ... numbers) {
+        System.out.print(number);
+        boolean matched = false;
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(" Number " + i + " is " + numbers[i]);
+            if(numbers[i] == number) {
+                matched = true;
+            }
+        }
+        if (matched) {
+            System.out.println("Found");
+        } else {
+            System.out.println("Unfortunately no match");
+        }
+
+    }
 }
