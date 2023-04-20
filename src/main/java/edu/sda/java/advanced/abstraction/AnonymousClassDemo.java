@@ -5,9 +5,9 @@ package edu.sda.java.advanced.abstraction;
  *
  * Anonymous type because WE DO NOT CREATE A SUBTYPE WITH PROPER CLASS NAME
  * We just locally create definitions  of abstract methods and create an object
- * basing on that local methods definition.
+ * basing on that local method's definition.
  *
- * One time action and we want to run it: that's what we use anonymous classes for.
+ * One time action that we want to run it: that's what we use anonymous classes for.
  */
 public class AnonymousClassDemo {
     public static void main(String[] args) {
