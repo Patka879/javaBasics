@@ -2,63 +2,68 @@ package edu.sda.java.advanced.abstraction;
 
 /**
  * This is class that takes general idea of Car and adds some special
- * setting typical for the gasoline car
- * Keyword "extends" to cennect it to general class. Id indicates that we treat GasolineCar
- * as a subtype of a car.
+ * settings typical to Gasoline Car
+ *
+ * Keyword "extends" indicates that we treat GasolineCar as subtype of Car
  */
+
 public class GasolineCar extends Car {
 
     private String fuelType;
     /**
-     * As we have a constructor in Car class
+     * As we have constructor in Car class
      * we need to add one here and pass values to
      * Car(String vin)
      */
-
-
-    public GasolineCar(String vin, String fuelType, int noOfKms) {
-        /**
-         * Keyword "super" refers to the base class.
-         * In this case calling super(vin) refers to constructor
-         */
-        super(vin, noOfKms); // first thing we do in a subclass, refers to the first constructor in Car
-        /**
-         * We can set other settings related to Gasoline Car here
-         */
-        this.fuelType = fuelType;
-    }
-
-
     public GasolineCar(String vin, String fuelType) {
-        super(vin); //refers to second constructor in Car
+        /**
+         * Keyword "super" refers to base class - in this case
+         * calling super(vin) refers to constructor
+         *
+         * Calling constructor from base class MUST be first what we do
+         * in subclass constructor
+         */
+        super(vin);
+
+        /**
+         * We can set other settings related to GasolineCar here
+         */
         this.fuelType = fuelType;
     }
+
+    public GasolineCar(String vin, int noOfKms, String fuelType) {
+        super(vin, noOfKms); //refering to second constructor in superclass
+        this.fuelType = fuelType;
+    }
+
+    public GasolineCar(String vin, int noOfKms) {
+        super(vin, noOfKms);
+    }
+
     /**
      * We need to prepare a code for runEngine() method
+     *
      * To mark a method as being derived from Car class,
      * we use annotation @Override
      *
      * Override annotation is an information that for this class
-     * we will use this definition of method instead of general one.
+     * we'll use this definition of method instead of general one
+     * Overriding requires keeping same number and type of parameters, method name and return type
      *
-     * Overriding requires keeping some:
-     * - number and type of parameters,
-     * - method name
-     * - return type
+     * As for the access (public, protected, package-private) we have to keep same access level
+     * or add a wider one on override
      *
-     * As for the access (public, protected, package-private) we have to keep the same
-     * access level or add a wider override:
-     * - package private abstract -> package private (ok)
-     * - package public abstract -> package public (ok)
-     * - public -> protected (not ok, as public is wider than protected)
+     * package private abstract -> package private - ok
+     * package private abstract -> public - ok
+     * public -> protected - not ok, as public is wider and we try to narrow it down
      */
     @Override
     public void runEngine() {
-        System.out.println("Engine is running");
-    }
-    @Override
-    public void fillFuel() {
-        System.out.println("Fuel is full");
+        System.out.println("Engine is running!");
     }
 
+    @Override
+    public void fillFuel() {
+        System.out.println("On a gas station, refualling!");
+    }
 }
