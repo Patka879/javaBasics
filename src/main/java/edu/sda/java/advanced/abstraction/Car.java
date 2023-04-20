@@ -9,15 +9,22 @@ package edu.sda.java.advanced.abstraction;
  */
 public abstract class Car {
     private String vin;
+    private int noOfKms;
 
     public Car(String vin) {
         this.vin = vin;
     }
 
+    public Car(String vin, int noOfKms) {
+        this.vin = vin;
+        this.noOfKms = noOfKms;
+    }
     public String getVin() {
         return vin;
     }
 
     public abstract void runEngine();
+
+    public abstract void fillFuel();
 
 }
