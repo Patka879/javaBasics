@@ -1,5 +1,7 @@
 package edu.sda.java.advanced.enums;
 
+import java.time.LocalDate;
+
 public class Human {
 
     /**
@@ -14,6 +16,8 @@ public class Human {
     private final String name;
     private final String surname;
     private Gender gender;
+    private LocalDate dateOfBirth;
+
 
     public Human() {
         /**
@@ -42,6 +46,18 @@ public class Human {
         this.gender = Gender.findByAbbrev(genderAbbrev); // call to static method, on enum and not on instance
     }
 
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+        calculateAge();
+    }
+
+    /**
+     * We use this method in Human class only, we do not need o expose it then.
+     * Its enough to make it private
+     */
+    private void calculateAge() {
+        int age = LocalDate.now().getYear() - dateOfBirth.getYear();
+    }
     public String getName() {
         return name;
     }
