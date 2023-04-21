@@ -12,7 +12,7 @@ public class InterfacesDemo {
         Phone phone = new Phone("Samsung", "G");
         Phone phone2 = new Phone("Nokia", "G");
         CellPhone cellPhone = new CellPhone("Iphone", ConnectionType.GSM);
-        Landline landline = new Landline("landlinePhone", null);
+        Landline landline = new Landline("landlinePhone");
 
         //Computer
         System.out.println(computer.connect() +" " +  computer.getConnectionType());

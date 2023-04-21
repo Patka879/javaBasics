@@ -6,6 +6,10 @@ public class Phone implements InternetConnection {
 
     private ConnectionType connectionType;
 
+    public Phone(String type) {
+        this.type = type;
+    }
+
     public Phone(String type, ConnectionType connectionType) {
         this.type = type;
         this.connectionType = connectionType;

@@ -15,6 +15,21 @@ public class Human {
     private final String surname;
     private Gender gender;
 
+    public Human() {
+        /**
+         * Sample of no = composition, in this case we set object fields
+         * when creating object
+         */
+        name = "Jan";
+        surname = "Kowalski";
+        gender = Gender.MALE;
+    }
+
+    /**
+     * Below constructors that support composition, we get crucial data
+     * from somewhere, and we do not create object from scratch
+     */
+
     public Human(String name, String surname, Gender gender) {
         this.name = name;
         this.surname = surname;
