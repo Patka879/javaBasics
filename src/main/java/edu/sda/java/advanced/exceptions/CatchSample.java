@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class CatchSample {
     public static void main(String[] args)  {
-//         catchAndSolve();
+         catchAndSolve();
         /**
          * We might get exception from "passException" and there are 2 possibilities of what we can do:
          * - we surround that method call with "try - catch" block
@@ -19,11 +19,17 @@ public class CatchSample {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        catchAndSolveFinale();
-          npDemo();
+        catchAndSolveFinale();
+//        npDemo();
 
     }
 
+    /**
+     * Deprecated as there's another method with better exception solving
+     * and stream closing.
+     * Use tryWithResources instead
+     */
+    @Deprecated
     private static void catchAndSolve() {
 
         try {

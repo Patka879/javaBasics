@@ -1,6 +1,6 @@
 package edu.sda.java.basics;
 // we can call method with many arguments or with none of them
-public class Varargs {
+public class    Varargs {
     public static void main(String[] args) {
         varArgsOne(1);
         System.out.println("===========");
