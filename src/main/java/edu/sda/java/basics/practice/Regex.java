@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class Regex {
     public static void main(String[] args) {
         // definition of pattern we want find
-        Pattern pattern = Pattern.compile("xyz");
+        Pattern pattern = Pattern.compile("hello");
         // check if this definition in given input
-        Matcher matcher = pattern.matcher("xyzxyz");
+        Matcher matcher = pattern.matcher("xyz babla");
         System.out.println("Exact match: " + matcher.matches());
         System.out.println("Pattern found: " + matcher.find());
 
